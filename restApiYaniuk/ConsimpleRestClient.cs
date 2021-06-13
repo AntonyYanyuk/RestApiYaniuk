@@ -20,7 +20,7 @@ namespace restApiYaniuk
                 var responseDeserialize =  await JsonSerializer.DeserializeAsync<OverallData>(responseBody);
                 return responseDeserialize;
             }
-            catch (HttpRequestException e)
+            catch (Exception e)
             {
                 Console.WriteLine("\nException Caught!");
                 Console.WriteLine("Message :{0} ", e.Message);

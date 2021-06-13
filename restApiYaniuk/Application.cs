@@ -44,15 +44,8 @@ namespace restApiYaniuk
                 else if (clChoice == "get")
                 {
                     var overallData = await httpRestClient.GetOverallData();
-                    try 
-                    {
-                        printData.Print(overallData);
-                    }
-                   catch (NullReferenceException ex)
-                    {
-                        Console.WriteLine("For some reason data not found.");
-                        Console.WriteLine("Massage: {0}", ex.Message);
-                    }
+                    if (overallData == null) continue;
+                    printData.Print(overallData);
                     Console.WriteLine();
                     Console.WriteLine("You may get another table in next selection menu.");
                 }
